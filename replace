@@ -1,0 +1,29 @@
+package net.codejava;
+import java.util.Random;
+import java.util.Scanner;
+public class Manipulations {
+
+	public static void main(String[] args) {
+		System.out.println("Please kindly provide string"+"\n"+"Each question mark character (?) will be replaced with random lower a-z letter.");
+		replace();
+	}
+	public static void replace(){
+		Scanner reader = new Scanner (System.in);
+		while ( true ) {
+			String typedString = reader.nextLine();
+			char[] typedStringArray = typedString.toCharArray();
+			for (int i=0;i<typedStringArray.length;i++) {
+				Random generator = new Random();
+				char c = (char)(generator.nextInt(26) + 'a');
+				if (typedStringArray[i]=='$'){
+					typedStringArray[i]=c;
+				}
+			}
+			String backToString = String.valueOf(typedStringArray);
+			if ( typedString.isEmpty() )
+				break;
+			System.out.println("Result: " + backToString);
+		}
+		reader.close();
+	}
+}
