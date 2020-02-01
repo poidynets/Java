@@ -15,7 +15,7 @@ public class Manipulations {
 			for (int i=0;i<typedStringArray.length;i++) {
 				Random generator = new Random();
 				char c = (char)(generator.nextInt(26) + 'a');
-				if (typedStringArray[i]=='$'){
+				if (typedStringArray[i]=='?'){
 					typedStringArray[i]=c;
 				}
 			}
